@@ -1,0 +1,14 @@
+.dashboardMainDiv {
+  display: flex;
+  height: 100vh;
+}
+.dashboardMainDiv .headerSec {
+  position: relative;
+  width: 100%;
+}
+.dashboardMainDiv .contentMainSec {
+  padding: 20px 20px;
+  background-color: #f5f8fa;
+  height: 90%;
+  overflow: auto;
+}

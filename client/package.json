@@ -1,0 +1,58 @@
+{
+  "name": "movee-dashboard",
+  "version": "0.0.1",
+  "description": "Movee API is a web service containing movies, and tv shows information, including high-resolution posters, genre, rating, runtime, votes, metascore and more.",
+  "private": true,
+  "proxy": "https://moveeapi.herokuapp.com",
+  "dependencies": {
+    "@stripe/react-stripe-js": "^1.6.0",
+    "@stripe/stripe-js": "^1.21.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.0",
+    "font-awesome": "^4.7.0",
+    "jwt-decode": "^3.1.2",
+    "react": "^17.0.2",
+    "react-copy-to-clipboard": "^5.0.4",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.2.1",
+    "react-scripts": "4.0.3",
+    "react-select": "^5.2.0",
+    "react-select-country-list": "^2.2.3",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.0",
+    "stripe": "^8.191.0",
+    "sweetalert2": "^11.1.9",
+    "validator": "^13.7.0",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

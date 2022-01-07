@@ -1,0 +1,285 @@
+{
+  "info": {
+    "_postman_id": "44caee55-6332-4375-9748-97c0da1b50b6",
+    "name": "movee_api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "localhost:8600/token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);\r",
+              "var token = jsonData.Document;\r",
+              "postman.setEnvironmentVariable(\"token\", token);"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [""],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"username\":\"movee_admin\",\r\n        \"password\":\"movee_admin\"\r\n      }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8600/token",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["token"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8600/api",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvc3Rjb2RlX2FkbWluIiwiaWQiOiJzYW1wbGVfZmFmMzQyNDQzNTQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc5MTQzMzAsImV4cCI6MTYyODExNDMzMH0.lZ7cvYgylJLjVKiKIyqtRRvurkVzMBEfvwAWRdNYWX0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8600/api/17",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["api", "17"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:8600/api/search?year=1910&single=true",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvc3Rjb2RlX2FkbWluIiwiaWQiOiJzYW1wbGVfZmFmMzQyNDQzNTQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc5MTQzMzAsImV4cCI6MTYyODExNDMzMH0.lZ7cvYgylJLjVKiKIyqtRRvurkVzMBEfvwAWRdNYWX0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8600/api/search?year=1910&single=true",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["api", "search"],
+          "query": [
+            {
+              "key": "year",
+              "value": "1910"
+            },
+            {
+              "key": "single",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:8600/api/",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);\r",
+              "var token = jsonData.Document;\r",
+              "postman.setEnvironmentVariable(\"token\", token);"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [""],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvc3Rjb2RlX2FkbWluIiwiaWQiOiJzYW1wbGVfZmFmMzQyNDQzNTQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc5MTQzMzAsImV4cCI6MTYyODExNDMzMH0.lZ7cvYgylJLjVKiKIyqtRRvurkVzMBEfvwAWRdNYWX0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \r\n\r\n        \"building_name\" : \"demo_building\",\r\n        \"sub_building_name\" : \"demo_sub_building\",\r\n        \"thoroughfare_name\" : \"demo_thoroughfare_name\",\r\n        \"thoroughfare_descriptor_name\" : \"demo_thoroughfare\",\r\n        \"approved_abbereviation\" : \"demo\",\r\n        \"outcode\" : \"AF12\",\r\n        \"movee_sector\" : \"1\",\r\n        \"residue_identifier\" : \"dem\",\r\n        \"direct_within_residue_ident\" : \"12\",\r\n        \"movee_type\" : \"S\",\r\n        \"organisation_name\" : \"Phooni\",\r\n        \"department_name\" : \"No name\",\r\n        \"post_town\" : \"api.post_town\",\r\n        \"dependent_locality\" : \"api.dependent_locality\",\r\n        \"double_dependent_locality\" : \"pi.double_dependent_locality\",\r\n        \"movee\" : \"AB112\",\r\n        \"outcome\" : \"AF12\",\r\n        \"incode\" : \"a\",\r\n        \"dependent_thoroughfare\" : 12,\r\n        \"dependent_thoroughfare_descriptor\" : 3,\r\n        \"building_number\" : 23,\r\n        \"number_of_households\" : 4,\r\n        \"FK_ORG_POSTCODE_TYPE\" : \"S\",\r\n        \"concatenation_index\" : \"i\",\r\n        \"delivery_point_suffix\" : \"ab\",\r\n        \"smalluser_organisation_indicator\" : \"i\",\r\n        \"po_box_number\" : \"na\",\r\n        \"welsh\" : \"F\"\r\n\r\n\r\n      }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8600/api",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["api"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8600/api/:id",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvc3Rjb2RlX2FkbWluIiwiaWQiOiJzYW1wbGVfZmFmMzQyNDQzNTQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc5MTQzMzAsImV4cCI6MTYyODExNDMzMH0.lZ7cvYgylJLjVKiKIyqtRRvurkVzMBEfvwAWRdNYWX0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8600/api/17",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["api", "17"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:8600/api/:id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);\r",
+              "var token = jsonData.Document;\r",
+              "postman.setEnvironmentVariable(\"token\", token);"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [""],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvc3Rjb2RlX2FkbWluIiwiaWQiOiJzYW1wbGVfZmFmMzQyNDQzNTQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc5MTQzMzAsImV4cCI6MTYyODExNDMzMH0.lZ7cvYgylJLjVKiKIyqtRRvurkVzMBEfvwAWRdNYWX0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \r\n\r\n        \"building_name\" : \"demo_building\",\r\n        \"sub_building_name\" : \"demo_sub_building\",\r\n        \"thoroughfare_name\" : \"demo_thoroughfare_name\",\r\n        \"thoroughfare_descriptor_name\" : \"demo_thoroughfare\",\r\n        \"approved_abbereviation\" : \"demo\",\r\n        \"outcode\" : \"AF12\",\r\n        \"postcode_sector\" : \"1\",\r\n        \"residue_identifier\" : \"dem\",\r\n        \"direct_within_residue_ident\" : \"12\",\r\n        \"movee_type\" : \"S\",\r\n        \"organisation_name\" : \"Fiverr\",\r\n        \"department_name\" : \"No name\",\r\n        \"post_town\" : \"api.post_town\",\r\n        \"dependent_locality\" : \"api.dependent_locality\",\r\n        \"double_dependent_locality\" : \"pi.double_dependent_locality\",\r\n        \"year\" : \"1910\",\r\n        \"outcome\" : \"AF12\",\r\n        \"incode\" : \"a\",\r\n        \"dependent_thoroughfare\" : 12,\r\n        \"dependent_thoroughfare_descriptor\" : 3,\r\n        \"building_number\" : 23,\r\n        \"number_of_households\" : 4,\r\n        \"FK_ORG_POSTCODE_TYPE\" : \"S\",\r\n        \"concatenation_index\" : \"i\",\r\n        \"delivery_point_suffix\" : \"ab\",\r\n        \"smalluser_organisation_indicator\" : \"i\",\r\n        \"po_box_number\" : \"na\",\r\n        \"welsh\" : \"T\"\r\n\r\n\r\n      }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8600/api/26",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["api", "26"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8600/api/:id",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvc3Rjb2RlX2FkbWluIiwiaWQiOiJzYW1wbGVfZmFmMzQyNDQzNTQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjc5MTQzMzAsImV4cCI6MTYyODExNDMzMH0.lZ7cvYgylJLjVKiKIyqtRRvurkVzMBEfvwAWRdNYWX0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8600/api/66",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8600",
+          "path": ["api", "66"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

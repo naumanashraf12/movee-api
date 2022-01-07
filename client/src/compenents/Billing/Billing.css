@@ -1,0 +1,37 @@
+.breadcrumb-item {
+  color: "#37ADEB";
+  font-size: large;
+}
+.event-btn {
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+
+  text-align: center;
+  border-radius: 1rem;
+}
+thead {
+  border-bottom: solid 1px #ababab;
+}
+.event-title {
+  color: #ababab;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 17px;
+  padding: 3rem 0 2rem 0 !important;
+  color: #ababab;
+}
+.event-table-body {
+  text-align: center;
+}
+.table-data {
+  margin: auto !important;
+  height: 50px;
+  vertical-align: middle !important;
+}
+.breadcrumb-item {
+  color: #37ADEB;
+  font-size: 22px;
+  font-weight: bold;
+}
