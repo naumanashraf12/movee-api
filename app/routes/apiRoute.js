@@ -10,11 +10,11 @@ const {
 } = require("../controllers/paymentController");
 module.exports = (app) => {
   // const { record } = require('../models/apiSchema')
-  app.route("/api/search").get(rateLimiter, apiInstance.readByYear);
+  app.route("/api/search").get(apiInstance.readByYear);
   // todoList Routes
   app
     .route("/api")
-    .get(rateLimiter, apiInstance.listAll)
+    .get(apiInstance.listAll)
     .post(isAdmin, apiInstance.createNew);
 
   app

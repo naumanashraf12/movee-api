@@ -1,5 +1,6 @@
 "user strict";
 var sql = require("../config");
+const { createQueryString } = require("../utils/createQueryString");
 
 // Api object constructor
 var Api = function (req, api) {
@@ -42,34 +43,32 @@ Api.getById = function (req, post, result) {
   });
 };
 
-Api.getByYear = function (req, id, result) {
-  console.log(id);
-  sql.query("Select * from api where year= ?", id, function (err, res) {
-    console.log(res);
-    if (err) {
-      console.log("error: ", err);
-      result(err, null);
-    } else {
-      result(null, res);
+Api.getByYear = function (req, year, result) {
+  sql.query(
+    createQueryString(`Select * from api where year= '${year}'`, req.query),
+    function (err, res) {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+      } else {
+        result(null, res);
+      }
     }
-  });
+  );
 };
 
 Api.getAll = function (req, result) {
-  const queryString = "Select * from api";
-  const page = +req.query.page || 1;
-  const perPage = 10;
-  queryString += ` LIMIT ${(page - 1) & perPage}, ${perPage}`;
-  const tt = req.query.tt;
-  queryString += tt ? ` WHERE movie_id='${tt}'` : "";
-  sql.query(queryString, function (err, res) {
-    if (err) {
-      console.log("error: ", err);
-      result(null, err);
-    } else {
-      result(null, res);
+  sql.query(
+    createQueryString("Select * from api", req.query),
+    function (err, res) {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+      } else {
+        result(null, res);
+      }
     }
-  });
+  );
 };
 
 Api.updateById = function (req, id, api, result) {
