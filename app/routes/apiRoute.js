@@ -1,7 +1,7 @@
 "use strict";
 const apiInstance = require("../controllers/apiController");
 const { isAdmin } = require("../middlewares/middlewares");
-const {rateLimiter} = require('../middlewares/rateLimiter')
+const { rateLimiter } = require("../middlewares/rateLimiter");
 const {
   payPayment,
   sendStripeAPIKey,
@@ -10,16 +10,16 @@ const {
 } = require("../controllers/paymentController");
 module.exports = (app) => {
   // const { record } = require('../models/apiSchema')
-  app.route("/api/search").get(rateLimiter,apiInstance.readByYear);
+  app.route("/api/search").get(rateLimiter, apiInstance.readByYear);
   // todoList Routes
   app
     .route("/api")
-    .get(rateLimiter,apiInstance.listAll)
+    .get(rateLimiter, apiInstance.listAll)
     .post(isAdmin, apiInstance.createNew);
 
   app
     .route("/api/:id")
-    .get(rateLimiter,apiInstance.readById)
+    .get(rateLimiter, apiInstance.readById)
     .put(isAdmin, apiInstance.updateById)
     .delete(isAdmin, apiInstance.deleteById);
 

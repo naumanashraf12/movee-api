@@ -56,7 +56,13 @@ Api.getByYear = function (req, id, result) {
 };
 
 Api.getAll = function (req, result) {
-  sql.query("Select * from api", function (err, res) {
+  const queryString = "Select * from api";
+  const page = +req.query.page || 1;
+  const perPage = 10;
+  queryString += ` LIMIT ${(page - 1) & perPage}, ${perPage}`;
+  const tt = req.query.tt;
+  queryString += tt ? ` WHERE movie_id='${tt}'` : "";
+  sql.query(queryString, function (err, res) {
     if (err) {
       console.log("error: ", err);
       result(null, err);

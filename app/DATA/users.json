@@ -1,1 +1,48 @@
-{"movee_admin":{"password":"movee_password","id":"sample_faf34244354","role":"admin","email":"admin@admin.com"},"movee_username":{"firstName":"anas","lastName":"ikram","password":"movee_password","email":"anasikram501@gmail.com","organizationName":"demo","organizationSector":"finance","country":"Pakistan","role":"user","id":"cus_KfjBOxo5dgdd4E","stripeId":"cus_KfjBOxo5dgdd4E","category":"prototype"},"finn0x":{"firstName":"finbarrs","lastName":"oketunji","password":"TP9rPgj7nefux7p#","email":"f@finbarrs.eu","organizationName":"Phooni Limited","organizationSector":"television","country":"United Kingdom","role":"user","id":"cus_KsBClIFkiJmXb2","stripeId":"cus_KsBClIFkiJmXb2","category":"Basic(monthly)","otp":110259},"elonmusk":{"firstName":"Elon","lastName":"Musk","password":"eLCFWv4K5TCc8$pPG","email":"e@tesla.com","organizationName":"Tesla","organizationSector":"startup","country":"United States","role":"user","id":"cus_KsCwjPVxbyKt8e","stripeId":"cus_KsCwjPVxbyKt8e","category":"Premium(monthly)"}}
+{
+  "movee_admin": {
+    "password": "movee_password",
+    "id": "sample_faf34244354",
+    "role": "admin",
+    "email": "admin@admin.com"
+  },
+  "movee_username": {
+    "firstName": "anas",
+    "lastName": "ikram",
+    "password": "movee_password",
+    "email": "anasikram501@gmail.com",
+    "organizationName": "demo",
+    "organizationSector": "finance",
+    "country": "Pakistan",
+    "role": "user",
+    "id": "cus_KfjBOxo5dgdd4E",
+    "stripeId": "cus_KfjBOxo5dgdd4E",
+    "category": "prototype"
+  },
+  "finn0x": {
+    "firstName": "finbarrs",
+    "lastName": "oketunji",
+    "password": "TP9rPgj7nefux7p#",
+    "email": "f@finbarrs.eu",
+    "organizationName": "Phooni Limited",
+    "organizationSector": "television",
+    "country": "United Kingdom",
+    "role": "user",
+    "id": "cus_KsBClIFkiJmXb2",
+    "stripeId": "cus_KsBClIFkiJmXb2",
+    "category": "Basic(monthly)",
+    "otp": 110259
+  },
+  "elonmusk": {
+    "firstName": "Elon",
+    "lastName": "Musk",
+    "password": "eLCFWv4K5TCc8$pPG",
+    "email": "e@tesla.com",
+    "organizationName": "Tesla",
+    "organizationSector": "startup",
+    "country": "United States",
+    "role": "user",
+    "id": "cus_KsCwjPVxbyKt8e",
+    "stripeId": "cus_KsCwjPVxbyKt8e",
+    "category": "Premium(monthly)"
+  }
+}

@@ -122,7 +122,7 @@ app.use(express.static(path.join(__dirname, "public")));
 http.createServer(app).listen(port);
 console.log("API server started on: " + port);
 
-app.use(isUserAuth);
+// app.use(isUserAuth);
 // app.use(rateLimiter)
 
 apiRoutes(app);
